@@ -5,7 +5,7 @@ class CompletionController < ApplicationController
   end
 
   def destroy
-    todo.update_column :completed_at, nil
+    Todo.find_by(id: todo[:id]).update_column :completed_at, nil
     redirect_to todos_path
   end
 
